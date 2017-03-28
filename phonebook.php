@@ -21,18 +21,14 @@
 			<th>Адрес</th>
 			<th>Телефонный номер</th>
 		</tr>
+		<?php foreach ($json as $item) { ?>
 		<tr>
-			<td><?= $json[0]['firstName'] ?></td>
-			<td><?= $json[0]['lastName'] ?></td>
-			<td><?= $json[0]['address'] ?></td>
-			<td><?= $json[0]['phoneNumber'] ?></td>
+			<td><?php echo $item['firstName'] ?></td>
+			<td><?php echo $item['lastName'] ?></td>
+			<td><?php echo $item['address'] ?></td>
+			<td><?php echo $item['phoneNumber'] ?></td>
 		</tr>
-		<tr>
-			<td><?= $json[1]['firstName'] ?></td>
-			<td><?= $json[1]['lastName'] ?></td>
-			<td><?= $json[1]['address'] ?></td>
-			<td><?= $json[1]['phoneNumber'] ?></td>
-		</tr>
+		<?php } ?>
 	</table>
 </body>
 </html>
