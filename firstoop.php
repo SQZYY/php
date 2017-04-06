@@ -6,16 +6,34 @@ class Car
     public $speed = 100;
 
     public function firstCar() {
-        $car = new Car();
-        $car->color = 'blue';
-        $car->speed = '120';
+        $this->color = 'blue';
+        $this->speed = 150;
     }
     public function secondCar() {
-        $anotherCar = new Car();
-        $anotherCar->color = 'black';
-        $anotherCar->speed = '110';
+        $this->color = 'black';
+        $this->speed = 110;
     }
 }
+$car = new Car();
+echo $car->color;
+echo '<br/>';
+echo $car->speed;
+echo '<br/>';
+echo '<br/>';
+
+$car->firstCar();
+echo $car->color;
+echo '<br/>';
+echo $car->speed;
+echo '<br/>';
+echo '<br/>';
+
+$car->secondCar();
+echo $car->color;
+echo '<br/>';
+echo $car->speed;
+echo '<br/>';
+echo '<br/>';
 
 class Tv
 {
@@ -23,16 +41,34 @@ class Tv
     public $size = 20;
 
     public function firstTv() {
-        $tv = new Tv();
-        $tv->channel = 2;
-        $tv->size = 40;
+        $this->channel = 2;
+        $this->size = 40;
     }
     public function secondTv() {
-        $tv = new Tv();
-        $tv->channel = 3;
-        $tv->size = 60;
+        $this->channel = 3;
+        $this->size = 60;
     }
 }
+$tv = new Tv();
+echo $tv->channel;
+echo '<br/>';
+echo $tv->size;
+echo '<br/>';
+echo '<br/>';
+
+$tv->firstTv();
+echo $tv->channel;
+echo '<br/>';
+echo $tv->size;
+echo '<br/>';
+echo '<br/>';
+
+$tv->secondTv();
+echo $tv->channel;
+echo '<br/>';
+echo $tv->size;
+echo '<br/>';
+echo '<br/>';
 
 class Pen
 {
@@ -40,16 +76,34 @@ class Pen
     public $button = 'yes';
 
     public function firstPen() {
-        $pen = new Pen();
-        $pen->color = 'black';
-        $pen->button = 'no';
+        $this->color = 'black';
+        $this->button = 'no';
     }
     public function secondPen() {
-        $pen = new Pen();
-        $pen->color = 'green';
-        $pen->button = 'yes';
+        $this->color = 'green';
+        $this->button = 'yes';
     }
 }
+$pen = new Pen();
+echo $pen->color;
+echo '<br/>';
+echo $pen->button;
+echo '<br/>';
+echo '<br/>';
+
+$pen->firstPen();
+echo $pen->color;
+echo '<br/>';
+echo $pen->button;
+echo '<br/>';
+echo '<br/>';
+
+$pen->secondPen();
+echo $pen->color;
+echo '<br/>';
+echo $pen->button;
+echo '<br/>';
+echo '<br/>';
 
 class Duck
 {
@@ -57,16 +111,34 @@ class Duck
     public $growth = 50;
 
     public function firstDuck() {
-        $duck = new Duck();
-        $duck->color = 'black';
-        $duck->growth = 40;
+        $this->color = 'black';
+        $this->growth = 40;
     }
     public function secondDuck() {
-        $duck = new Duck();
-        $duck->color = 'white';
-        $duck->growth = 70;
+        $this->color = 'white';
+        $this->growth = 70;
     }
 }
+$duck = new Duck();
+echo $duck->color;
+echo '<br/>';
+echo $duck->growth;
+echo '<br/>';
+echo '<br/>';
+
+$duck->firstDuck();
+echo $duck->color;
+echo '<br/>';
+echo $duck->growth;
+echo '<br/>';
+echo '<br/>';
+
+$duck->secondDuck();
+echo $duck->color;
+echo '<br/>';
+echo $duck->growth;
+echo '<br/>';
+echo '<br/>';
 
 class Product
 {
@@ -74,13 +146,31 @@ class Product
     public $discount = 50;
 
     public function firstProduct() {
-        $product = new Product();
-        $product->price = 30000;
-        $product->discount = 40;
+        $this->price = 30000;
+        $this->discount = 40;
     }
     public function secondProduct() {
-        $product = new Product();
-        $product->price = 100000;
-        $product->discount = 70;
+        $this->price = 100000;
+        $this->discount = 70;
     }
 }
+$product = new Product();
+echo $product->price;
+echo '<br/>';
+echo $product->discount;
+echo '<br/>';
+echo '<br/>';
+
+$product->firstProduct();
+echo $product->price;
+echo '<br/>';
+echo $product->discount;
+echo '<br/>';
+echo '<br/>';
+
+$product->secondProduct();
+echo $product->price;
+echo '<br/>';
+echo $product->discount;
+echo '<br/>';
+echo '<br/>';
