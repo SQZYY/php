@@ -1,201 +1,87 @@
 <?php
 
-class Factory
+interface Father
 {
-    public $color = 'white';
-    public $speed = 100;
+    public function things($color, $trademark, $price, $discount, $name);
 }
-class Car extends Factory
-{
-    public $color = 'white';
-    public $speed = 100;
 
-    public function firstCar() {
-        $this->color = 'blue';
-        $this->speed = 150;
-    }
-    public function secondCar() {
-        $this->color = 'black';
-        $this->speed = 110;
-    }
+class Car implements Father
+{
+    public $color;
+    public $trademark;
+    public $price;
+    public $discount;
+    public $speed;
+
+    public function things($color, $trademark, $price, $discount, $name){}
 }
+
 $car = new Car();
-echo $car->color;
-echo '<br/>';
-echo $car->speed;
-echo '<br/>';
-echo '<br/>';
 
-$car->firstCar();
-echo $car->color;
-echo '<br/>';
-echo $car->speed;
-echo '<br/>';
-echo '<br/>';
+$car->color = 'Black';
+$car->trademark = 'Audi';
+$car->price = 900000;
+$car->discount = 10;
+$car->speed = 200;
 
-$car->secondCar();
-echo $car->color;
-echo '<br/>';
-echo $car->speed;
-echo '<br/>';
-echo '<br/>';
-
-class Shop
+class Tv implements Father
 {
-    public $channel = 1;
-    public $size = 20;
-}
-class Tv extends Shop
-{
-    public $channel = 1;
-    public $size = 20;
+    public $trademark;
+    public $price;
+    public $discount;
+    public $diagonal;
 
-    public function firstTv() {
-        $this->channel = 2;
-        $this->size = 40;
-    }
-    public function secondTv() {
-        $this->channel = 3;
-        $this->size = 60;
-    }
+    public function things($color, $trademark, $price, $discount, $name){}
 }
+
 $tv = new Tv();
-echo $tv->channel;
-echo '<br/>';
-echo $tv->size;
-echo '<br/>';
-echo '<br/>';
 
-$tv->firstTv();
-echo $tv->channel;
-echo '<br/>';
-echo $tv->size;
-echo '<br/>';
-echo '<br/>';
+$tv->trademark = 'Sony';
+$tv->price = 60000;
+$tv->discount = 15;
+$tv->diagonal = 40;
 
-$tv->secondTv();
-echo $tv->channel;
-echo '<br/>';
-echo $tv->size;
-echo '<br/>';
-echo '<br/>';
-
-class Office
+class BallPointPen implements Father
 {
-    public $color = 'red';
-    public $button = 'yes';
+    public $color;
+    public $trademark;
+    public $price;
+
+    public function things($color, $trademark, $price, $discount, $name){}
 }
-class Pen extends Office
+
+$pen = new BallPointPen();
+
+$pen->color = 'Blue';
+$pen->trademark = 'Cross';
+$pen->price = 2000;
+
+class Duck implements Father
 {
-    public $color = 'red';
-    public $button = 'yes';
+    public $color;
+    public $name;
 
-    public function firstPen() {
-        $this->color = 'black';
-        $this->button = 'no';
-    }
-    public function secondPen() {
-        $this->color = 'green';
-        $this->button = 'yes';
-    }
+    public function things($color, $trademark, $price, $discount, $name){}
 }
-$pen = new Pen();
-echo $pen->color;
-echo '<br/>';
-echo $pen->button;
-echo '<br/>';
-echo '<br/>';
 
-$pen->firstPen();
-echo $pen->color;
-echo '<br/>';
-echo $pen->button;
-echo '<br/>';
-echo '<br/>';
-
-$pen->secondPen();
-echo $pen->color;
-echo '<br/>';
-echo $pen->button;
-echo '<br/>';
-echo '<br/>';
-
-class Animal
-{
-    public $color = 'gray';
-    public $growth = 50;
-}
-class Duck extends Animal
-{
-    public $color = 'gray';
-    public $growth = 50;
-
-    public function firstDuck() {
-        $this->color = 'black';
-        $this->growth = 40;
-    }
-    public function secondDuck() {
-        $this->color = 'white';
-        $this->growth = 70;
-    }
-}
 $duck = new Duck();
-echo $duck->color;
-echo '<br/>';
-echo $duck->growth;
-echo '<br/>';
-echo '<br/>';
 
-$duck->firstDuck();
-echo $duck->color;
-echo '<br/>';
-echo $duck->growth;
-echo '<br/>';
-echo '<br/>';
+$duck->color = 'Gray';
+$duck->name = 'Sean';
 
-$duck->secondDuck();
-echo $duck->color;
-echo '<br/>';
-echo $duck->growth;
-echo '<br/>';
-echo '<br/>';
-
-class Export
+class Product implements Father
 {
-    public $price = 40000;
-    public $discount = 50;
-}
-class Product extends Export
-{
-    public $price = 40000;
-    public $discount = 50;
+    public $trademark;
+    public $price;
+    public $discount;
+    public $name;
 
-    public function firstProduct() {
-        $this->price = 30000;
-        $this->discount = 40;
-    }
-    public function secondProduct() {
-        $this->price = 100000;
-        $this->discount = 70;
-    }
+    public function things($color, $trademark, $price, $discount, $name){}
 }
+
 $product = new Product();
-echo $product->price;
-echo '<br/>';
-echo $product->discount;
-echo '<br/>';
-echo '<br/>';
 
-$product->firstProduct();
-echo $product->price;
-echo '<br/>';
-echo $product->discount;
-echo '<br/>';
-echo '<br/>';
-
-$product->secondProduct();
-echo $product->price;
-echo '<br/>';
-echo $product->discount;
-echo '<br/>';
-echo '<br/>';
+$product->trademark = 'Karcher';
+$product->price = 60000;
+$product->discount = 10;
+$product->name = 'Vacuum cleaner';
