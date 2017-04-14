@@ -128,3 +128,73 @@ $pullover->trademark = 'Adidas';
 $pullover->price = 3000;
 $pullover->discount = 15;
 $pullover->name = 'Autumn Collection';
+
+//ДОПОЛНИТЕЛЬНОЕ ЗАДАНИЕ
+
+class Product
+{
+    public $price;
+    public $discount = 10;
+    public $weight;
+    public $delivery;
+}
+
+class Apple extends Product
+{
+    public $price = 107;
+    public function getPrice()
+    {
+        if ($this->discount) {
+            return round($this->price - ($this->price / 100 * $this->discount));
+        }
+    }
+}
+
+$apple = new Apple();
+echo $apple->getPrice() . '<br>';
+
+class Meat extends Product
+{
+    public $price = 423;
+    public function getPrice()
+    {
+        if ($this->discount) {
+            return round($this->price - ($this->price / 100 * $this->discount) );
+        }
+    }
+}
+
+$meat = new Meat();
+echo $meat->getPrice() . '<br>';
+
+class Rice extends Product
+{
+    public $price = 58;
+    public $weight = 11;
+    public function weightPrice()
+    {
+        if ($this->weight > 10) {
+            return round($this->price - ($this->price / 100 * $this->discount));
+        }
+    }
+}
+
+$rice = new Rice();
+echo $rice->weightPrice() . '<br>';
+
+class Delivery extends Product
+{
+    public function deliveryPrice()
+    {
+        if ($this->discount > 0)
+        {
+            return 300;
+        }
+        else {
+            return 250;
+        }
+    }
+}
+
+$delivery = new Delivery();
+echo $delivery->deliveryPrice();
