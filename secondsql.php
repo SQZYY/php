@@ -10,6 +10,13 @@ if ($_POST) {
     $statementTwo->execute();
     header("location:/secondsql.php");
 }
+if ($_GET)  {
+    $id = $_GET['id'];
+    $delete = "DELETE FROM tasks WHERE id = $id";
+    $statementThree = $pdo->prepare($delete);
+    $statementThree->execute();
+    header("location:/secondsql.php");
+}
 ?>
 
 <html>
@@ -55,6 +62,9 @@ if ($_POST) {
         <td><?= htmlspecialchars($row["description"], ENT_QUOTES);?></td>
         <td><?= htmlspecialchars($row["date_added"], ENT_QUOTES);?></td>
         <td><?= htmlspecialchars($row["is_done"], ENT_QUOTES);?></td>
+        <td>
+            <a href='?id=<?php echo $row['id'] ?>&action=delete'>Удалить</a>
+        </td>
     </tr>
     <?php } ?>
 </table>
