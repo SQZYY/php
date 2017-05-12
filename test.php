@@ -1,12 +1,9 @@
 <?php
 
 $uploaddir = './tests/';
-$uploadfile = $uploaddir . basename($_FILES['test']['name']);
 
-if (move_uploaded_file($_FILES['test']['tmp_name'], $uploadfile)) {
-    $test = json_decode(file_get_contents($uploaddir . basename($_FILES['test']['name'])), true);
-} else {
-    echo "Не удалось загрузить тест";
+if ($_GET) {
+    $test = json_decode(file_get_contents($uploaddir . ($_GET['test'])), true);
 }
 
 ?>
@@ -17,14 +14,19 @@ if (move_uploaded_file($_FILES['test']['tmp_name'], $uploadfile)) {
     <title>Тест</title>
 </head>
 <body>
-    <form action="./testdone.php" method="post">
-        <?php foreach ($test as $key) { ?>
-        <label for="test"><?php echo $key['description']; ?></label>
-            <label><input name="q1" type="radio" value="a">11</label>
-            <label><input name="q1" type="radio" value="b">12</label>
-            <label><input name="q1" type="radio" value="c">13</label>
-            <input type="submit" value="Узнать результат">
+<form action="/testdone.php" method="post">
+    <?php foreach ($test as $key) { ?>
+        <label for="test"><?= $key['description']; }?></label>
+        <?php
+        $randOne = rand(1, 3 - 1);
+        $randTwo = rand($key['result'] + 1, 20);
+        $array = [$randOne, $randTwo, $key['result']]; ?>
+        <input type="hidden" name="answer" value="<?= $key['result']?>">
+        <?php shuffle($array);
+        foreach ($array as $num) { ?>
+        <label><input name="q1" type="radio" value="<?= $num; ?>"><?= $num; ?></label>
         <?php } ?>
-    </form>
+        <input type="submit" value="Узнать результат">
+</form>
 </body>
 </html>

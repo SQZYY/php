@@ -1,5 +1,14 @@
 <?php
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $testName = isset($_FILES['test']['name']) ? $_FILES['test']['name'] : '';
+    $testTmpFileName = isset($_FILES['test']['tmp_name']) ? $_FILES['test']['tmp_name'] : '';
+    if ($testName) {
+        $testFileName = __DIR__ . '/tests/';
+        $successMoved = move_uploaded_file($testTmpFileName, $testFileName . $testName);
+    }
+}
+
 $dir = './tests';
 $scan = array_diff(scandir($dir), array('..', '.'));
 
@@ -13,7 +22,7 @@ $scan = array_diff(scandir($dir), array('..', '.'));
 <body>
     <h1>Список тестов:</h1>
             <?php foreach ($scan as $test) { ?>
-            <a href='./tests/<?php echo $test; ?>'><?php echo $test . '<br>'; ?></a>
+            <a href='/test.php?test=<?php echo $test; ?>'><?php echo $test . '<br>'; ?></a>
     <?php } ?>
 </body>
 </html>

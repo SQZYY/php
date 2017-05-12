@@ -1,7 +1,7 @@
 <?php
 
-if ($_POST['q1'] == 'b') {
-    echo 'Правильно';
+if ($_POST['q1'] === $_POST['answer']) {
+    echo 'Правильно!';
 } else {
-    echo 'Не правильно';
+    echo 'Неправильно!';
 }
