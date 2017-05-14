@@ -2,125 +2,130 @@
 
 class Car
 {
-    public $color;
-    public $speed;
+    public $trademark;
+    public $speed = 180;
+    public $color = 'White ';
 
-    public function defaultCar()
+    public function __construct()
     {
-        $this->color = 'White';
-        $this->speed = 180;
+        if ($this->speed > 160) {
+            $this->trademark = 'BMW ';
+            $this->color;
+            $this->speed = 200;
+        } else {
+            $this->trademark = 'Audi ';
+            $this->color = 'Black ';
+            $this->speed = 150;
+        }
     }
 }
 
 $firstCar = new Car();
 $secondCar = new Car();
 
-$firstCar->color = 'Black ';
-$firstCar->speed = 160;
-$secondCar->color = 'Red ';
-$secondCar->speed = 190;
-
 echo $firstCar->color;
+echo $firstCar->trademark;
 echo $firstCar->speed . '<br>';
-echo $secondCar->color;
-echo $secondCar->speed . '<br>';
+echo $secondCar->color = 'Red ';
+echo $secondCar->trademark = 'Mercedes ';
+echo $secondCar->speed = 180 . '<br>';
 
 class Tv
 {
     public $trademark;
+    public $wifi = 'Yes ';
     public $diagonal;
 
-    public function defaultTv()
+    public function __construct()
     {
-        $this->trademark = 'LG';
-        $this->diagonal = 38;
+        if ($this->wifi === 'No') {
+            $this->trademark = 'LG ';
+            $this->diagonal = 50;
+        } else {
+            $this->trademark = 'JVC ';
+            $this->wifi = 'No ';
+            $this->diagonal = 15;
+        }
     }
 }
 
 $firstTv = new Tv();
 $secondTv = new Tv();
 
-$firstTv->trademark = 'Samsung ';
-$firstTv->diagonal = 38.5;
-$secondTv->trademark = 'Sony ';
-$secondTv->diagonal = 50;
-
 echo $firstTv->trademark;
+echo $firstTv->wifi;
 echo $firstTv->diagonal . '<br>';
-echo $secondTv->trademark;
-echo $secondTv->diagonal . '<br>';
+echo $secondTv->trademark = 'Samsung ';
+echo $secondTv->wifi = 'Yes ';
+echo $secondTv->diagonal = 45 . '<br>';
 
 class BallPointPen
 {
     public $trademark;
-    public $color;
+    public $color = 'Blue ';
 
-    public function defaultPen()
+    public function __construct()
     {
-        $this->trademark = 'Parker';
-        $this->color = 'Black';
+        if ($this->color === 'Blue ') {
+            $this->trademark = 'Parker';
+        } else {
+            $this->trademark = 'Cross';
+            $this->color = 'Green ';
+        }
     }
 }
 
 $firstPen = new BallPointPen();
 $secondPen = new BallPointPen();
 
-$firstPen->trademark = 'Waterman - ';
-$firstPen->color = 'Blue';
-$secondPen->trademark = 'Cross - ';
-$secondPen->color = 'Light Blue';
-
-echo $firstPen->trademark;
-echo $firstPen->color . '<br>';
-echo $secondPen->trademark;
-echo $secondPen->color . '<br>';
+echo $firstPen->color;
+echo $firstPen->trademark . '<br>';
+echo $secondPen->color = 'Black ';
+echo $secondPen->trademark = 'Waterman' . '<br>';
 
 class Duck
 {
-    public $name;
+    public $name = 'Donald ';
     public $color;
 
-    public function defaultDuck()
+    public function __construct()
     {
-        $this->name = 'Donald';
-        $this->color = 'White';
+        if ($this->name === 'Donald ') {
+            $this->color = 'White';
+        } else {
+            $this->name = 'Sean ';
+            $this->color = 'Yellow';
+        }
     }
 }
 
 $firstDuck = new Duck();
 $secondDuck = new Duck();
 
-$firstDuck->name = 'Michael - ';
-$firstDuck->color = 'Gray';
-$secondDuck->name = 'Sean - ';
-$secondDuck->color = 'Yellow';
-
 echo $firstDuck->name;
 echo $firstDuck->color . '<br>';
-echo $secondDuck->name;
-echo $secondDuck->color . '<br>';
+echo $secondDuck->name = 'Michael ';
+echo $secondDuck->color = 'Gray' . '<br>';
 
 class Product
 {
-    public $price;
+    public $price = 45000;
     public $discount;
 
-    public function defaultProduct()
+    public function __construct()
     {
-        $this->price = 50000;
-        $this->discount = 10;
+        if ($this->price >= 30000) {
+            $this->discount = ' 15%';
+        } else {
+            $this->discount = ' 10%';
+        }
     }
 }
 
 $firstProduct = new Product();
 $secondProduct = new Product();
 
-$firstProduct->price = '45000 - ';
-$firstProduct->discount = '5%';
-$secondProduct->price = '30000 - ';
-$secondProduct->discount = '15%';
-
 echo $firstProduct->price;
 echo $firstProduct->discount . '<br>';
-echo $secondProduct->price;
-echo $secondProduct->discount;
+echo $secondProduct->price = 20000;
+echo $secondProduct->discount = ' 5%' . '<br>';
