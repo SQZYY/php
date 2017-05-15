@@ -1,4 +1,6 @@
 [{
-  "description": "6+6=?",
+  "task": {
+    "description": "6+6="
+  },
   "result": 12
 }]

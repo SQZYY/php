@@ -1,6 +1,6 @@
 <?php
 
-if ($_POST['q1'] === $_POST['answer']) {
+if ($_POST['answer'] === $_POST['rightanswer']) {
     echo 'Правильно!';
 } else {
     echo 'Неправильно!';
