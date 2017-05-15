@@ -14,8 +14,8 @@ if ($_GET) {
 <form action="/testdone.php" method="post">
     <?php foreach ($test as $key => $value) { ?>
     <label for="test"><?= $value['description']; }?></label>
-    <input type="hidden" name="rightanswer" value="<?= $value['result']?>">
-    <label><input type="text" name = "answer"></label>
+    <input type="hidden" name="test" value="<?= $value['result']?>">
+    <label><input type="text" name="answer"></label>
     <input type="submit" value="Узнать результат">
 </form>
 </body>

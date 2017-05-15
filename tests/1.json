@@ -1,6 +1,6 @@
-[{
-  "task": {
-    "description": "6+6="
-  },
-  "result": 12
-}]
+{
+  "test1": {
+    "description": "6+6=",
+    "result": 12
+  }
+}
