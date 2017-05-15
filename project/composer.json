@@ -1,0 +1,7 @@
+{
+    "name": "egor/project",
+    "description": "yandex/maps",
+    "require": {
+        "yandex/geo": "^1.1"
+    }
+}
