@@ -4,7 +4,7 @@
     <title>Генератор тестов</title>
 </head>
 <body>
-    <form enctype="multipart/form-data" action="/list.php" method="post">
+    <form enctype="multipart/form-data" action="./list.php" method="post">
         <label for="file">Отправить тест: </label>
         <input type="file" name="test" id="file">
         <input type="submit" value="Отправить">

@@ -22,7 +22,7 @@ $scan = array_diff(scandir($dir), array('..', '.'));
 <body>
     <h1>Список тестов:</h1>
             <?php foreach ($scan as $test) { ?>
-            <a href='/test.php?test=<?php echo $test; ?>'><?php echo $test . '<br>'; ?></a>
+            <a href='./test.php?test=<?php echo $test; ?>'><?php echo $test . '<br>'; ?></a>
     <?php } ?>
 </body>
 </html>
