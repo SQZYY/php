@@ -12,11 +12,14 @@ if ($_GET) {
 </head>
 <body>
 <form action="/testdone.php" method="post">
+    <fieldset>
     <?php foreach ($test as $key => $value) { ?>
-    <label for="test"><?= $value['description']; }?></label>
+    <label for="test"><?= $value['question']; }?></label><br>
+    <?php foreach ($value['variables'] as $var) {echo $var . '<br>'; } ?>
     <input type="hidden" name="test" value="<?= $value['result']?>">
     <label><input type="text" name="answer"></label>
     <input type="submit" value="Узнать результат">
+    </fieldset>
 </form>
 </body>
 </html>
