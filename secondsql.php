@@ -15,13 +15,13 @@ if (isset($_POST['description']) ? $_POST['description'] : '') {
 
 if (isset($_GET['id']) ? $_GET['id'] : '') {
     $id = $_GET['id'];
-    if ('&action=done') {
+    if (isset($_GET['id']) AND isset($_GET['action']) == 'done') {
         $done = "UPDATE tasks SET is_done = 1 WHERE id = $id";
         $statementFour = $pdo->prepare($done);
         $statementFour->execute();
         header("location:/secondsql.php");
     }
-    if ('&action=delete') {
+    if (isset($_GET['id']) AND isset($_GET['action']) == 'delete') {
         $delete = "DELETE FROM tasks WHERE id = $id";
         $statementThree = $pdo->prepare($delete);
         $statementThree->execute();
