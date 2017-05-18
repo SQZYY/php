@@ -24,8 +24,6 @@ $scan = array_diff(scandir($dir), array('..', '.'));
             <?php foreach ($scan as $test) { ?>
             <a href='/test.php?test=<?php echo $test; ?>'><?php echo $test . '<br>'; ?></a>
     <?php } ?>
+    <a href="./admin.php">Загрузить новый тест</a><br>
 </body>
 </html>
-
-
-
