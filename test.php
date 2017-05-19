@@ -1,11 +1,12 @@
 <?php
 
-$uploaddir = './tests/';
+$filename = './tests/' . $_GET['test'];
 
-if (isset($_GET['test']) ? $_GET['test'] : '') {
-    $test = json_decode(file_get_contents($uploaddir . ($_GET['test'])), true);
+if (file_exists($filename)) {
+    $test = json_decode(file_get_contents($filename), true);
 } else {
     header('Location: ./list.php');
+    die();
 }
 
 ?>
