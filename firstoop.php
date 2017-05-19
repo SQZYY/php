@@ -2,20 +2,18 @@
 
 class Car
 {
-    public $trademark;
-    public $speed = 180;
+    public $trademark = 'BMW ';
+    public $behavior;
+    public $speed;
     public $color = 'White ';
 
     public function __construct()
     {
-        if ($this->speed > 160) {
-            $this->trademark = 'BMW ';
-            $this->color;
-            $this->speed = 200;
+        $this->speed = rand(0, 10);
+        if ($this->speed >= 1) {
+            $this->behavior = 'Набирает скорость ';
         } else {
-            $this->trademark = 'Audi ';
-            $this->color = 'Black ';
-            $this->speed = 150;
+            $this->behavior = 'Стоит на месте ';
         }
     }
 }
@@ -25,26 +23,26 @@ $secondCar = new Car();
 
 echo $firstCar->color;
 echo $firstCar->trademark;
+echo $firstCar->behavior;
 echo $firstCar->speed . '<br>';
 echo $secondCar->color = 'Red ';
 echo $secondCar->trademark = 'Mercedes ';
-echo $secondCar->speed = 180 . '<br>';
+echo $secondCar->behavior;
+echo $secondCar->speed . '<br>';
 
 class Tv
 {
-    public $trademark;
-    public $wifi = 'Yes ';
-    public $diagonal;
+    public $trademark = 'LG ';
+    public $price;
+    public $addons;
 
     public function __construct()
     {
-        if ($this->wifi === 'No') {
-            $this->trademark = 'LG ';
-            $this->diagonal = 50;
+        $this->price = rand(10000, 40000);
+        if ($this->price >= 25000) {
+            $this->addons = 'SmartTV ';
         } else {
-            $this->trademark = 'JVC ';
-            $this->wifi = 'No ';
-            $this->diagonal = 15;
+            $this->addons;
         }
     }
 }
@@ -53,24 +51,27 @@ $firstTv = new Tv();
 $secondTv = new Tv();
 
 echo $firstTv->trademark;
-echo $firstTv->wifi;
-echo $firstTv->diagonal . '<br>';
+echo $firstTv->addons;
+echo $firstTv->price . '<br>';
 echo $secondTv->trademark = 'Samsung ';
-echo $secondTv->wifi = 'Yes ';
-echo $secondTv->diagonal = 45 . '<br>';
+echo $secondTv->addons;
+echo $secondTv->price . '<br>';
 
 class BallPointPen
 {
     public $trademark;
-    public $color = 'Blue ';
+    public $color;
+    public $price;
 
     public function __construct()
     {
-        if ($this->color === 'Blue ') {
-            $this->trademark = 'Parker';
+        $this->price = rand(1000, 4000);
+        if ($this->price >= 2500) {
+            $this->trademark = 'Parker ';
+            $this->color = 'Blue ';
         } else {
-            $this->trademark = 'Cross';
-            $this->color = 'Green ';
+            $this->trademark = 'Waterman ';
+            $this->color = 'Black ';
         }
     }
 }
@@ -79,22 +80,27 @@ $firstPen = new BallPointPen();
 $secondPen = new BallPointPen();
 
 echo $firstPen->color;
-echo $firstPen->trademark . '<br>';
-echo $secondPen->color = 'Black ';
-echo $secondPen->trademark = 'Waterman' . '<br>';
+echo $firstPen->trademark;
+echo $firstPen->price . '<br>';
+echo $secondPen->color;
+echo $secondPen->trademark;
+echo $secondPen->price . '<br>';
 
 class Duck
 {
-    public $name = 'Donald ';
+    public $price;
+    public $type;
     public $color;
 
     public function __construct()
     {
-        if ($this->name === 'Donald ') {
-            $this->color = 'White';
+        $this->price = rand(100, 1000);
+        if ($this->price >= 300) {
+            $this->color = 'Yellow ';
+            $this->type = 'Plush Duck ';
         } else {
-            $this->name = 'Sean ';
-            $this->color = 'Yellow';
+            $this->color = 'Yellow ';
+            $this->type = 'Plastic Duck ';
         }
     }
 }
@@ -102,18 +108,21 @@ class Duck
 $firstDuck = new Duck();
 $secondDuck = new Duck();
 
-echo $firstDuck->name;
-echo $firstDuck->color . '<br>';
-echo $secondDuck->name = 'Michael ';
-echo $secondDuck->color = 'Gray' . '<br>';
+echo $firstDuck->color;
+echo $firstDuck->type;
+echo $firstDuck->price . '<br>';
+echo $secondDuck->color;
+echo $secondDuck->type;
+echo $secondDuck->price . '<br>';
 
 class Product
 {
-    public $price = 45000;
+    public $price;
     public $discount;
 
     public function __construct()
     {
+        $this->price = rand(20000, 40000);
         if ($this->price >= 30000) {
             $this->discount = ' 15%';
         } else {
@@ -127,5 +136,5 @@ $secondProduct = new Product();
 
 echo $firstProduct->price;
 echo $firstProduct->discount . '<br>';
-echo $secondProduct->price = 20000;
-echo $secondProduct->discount = ' 5%' . '<br>';
+echo $secondProduct->price;
+echo $secondProduct->discount;
