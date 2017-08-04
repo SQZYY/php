@@ -1,15 +1,16 @@
 <?php
+
 $name = 'Егор';
 $age = '21';
 $email = 'egorax1le@yandex.ru';
 $city = 'Видное';
-$about = 'Начинающий программист';
+$about = 'Веб-программист';
+
 ?>
 
-<!Doctype html>
 <html>
-	<head>
-		<title>Егор - Студент</title>
+    <head>
+        <title>Егор - Ученик</title>
 		<meta charset="utf-8">
 		<style>
 			body {
@@ -27,26 +28,26 @@ $about = 'Начинающий программист';
 		</style>
 	</head>
 	<body>
-		<h1>Страница студента <?= $name?></h1>
+		<h1>Страница студента<?= $name ?></h1>
         <dl>
             <dt>Имя</dt>
-            <dd><?= $name?></dd>
+            <dd><?= $name ?></dd>
         </dl>
         <dl>
             <dt>Возраст</dt>
-            <dd><?= $age?></dd>
+            <dd><?= $age ?></dd>
         </dl>
         <dl>
             <dt>Адрес электронной почты</dt>
-            <dd><a href=""><?= $email?></a></dd>
+            <dd><a href=""><?= $email ?></a></dd>
         </dl>
         <dl>
             <dt>Город</dt>
-            <dd><?= $city?></dd>
+            <dd><?= $city ?></dd>
         </dl>
         <dl>
             <dt>О себе</dt>
-            <dd><?= $about?></dd>
+            <dd><?= $about ?></dd>
         </dl>
 	</body>
 </html>
